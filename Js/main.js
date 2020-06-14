@@ -9,9 +9,6 @@ document.querySelector(".lists").classList.toggle("active");
  }
 
 //loader
- window.addEventListener("load", () =>{
-  loader()
- })
  function loader(){
   let loaderContainer = document.createElement("div");
    loaderContainer.setAttribute("class", "loader")
@@ -21,5 +18,6 @@ document.querySelector(".lists").classList.toggle("active");
    }
    document.body.append(loaderContainer)
  }
+  loader()
  
 
