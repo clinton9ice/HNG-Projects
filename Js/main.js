@@ -7,19 +7,19 @@ mobileMenu.onclick = element =>{
 document.querySelector(".lists").classList.toggle("active");
  mobileMenu.classList.toggle("active");
  }
- //loader
- let loaderContainer = document.createElement("div");
+
+//loader
  window.addEventListener("load", () =>{
   loader()
-  
  })
  function loader(){
+  let loaderContainer = document.createElement("div");
    loaderContainer.setAttribute("class", "loader")
    for(var i = 0; i < 4; i++){
      let span = document.createElement("span")
      loaderContainer.append(span)
    }
-
- document.body.appendChild(loaderContainer)
+   document.body.append(loaderContainer)
  }
+ 
 

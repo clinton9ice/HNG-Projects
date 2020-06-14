@@ -1,21 +1,30 @@
 
+html{
+  scroll-behavior: smooth;
+}
 header{
   background-position: center;
   background-size: cover;
   position: relative;
+  object-fit: cover;
+  object-position: center;
   height: 100vh;
   width: 100%;
 }
 header#index-header-section{
-  background-image: url("https://images.unsplash.com/photo-1459535653751-d571815e906b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60");
+  background-image: url("../images/nastuh-abootalebi-rSpMla5RItA-unsplash.jpg");
 }
 header#contact-header-section{
-background: url("https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60");
+background: url("../images/scott-graham-5fNmWej4tAA-unsplash.jpg");
 background-position: center;
 background-size: cover;
 }
 header#rooms_rates-header-section{
-  background-image: url("https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60");
+  background-image: url("../images/alexander-kaunas-67-sOi7mVIk-unsplash.jpg");
+}
+#facility-header-section{
+  background-image: url("../images/ralph-ravi-kayden-2d4lAQAlbDA-unsplash.jpg");
+
 }
 /*---nav-----*/
 nav{
@@ -165,19 +174,34 @@ header .headerFooter span.guest::after{
   border-radius: 50%;
   text-align: center;
   transition: animation 0.5s ease;
-  animation: slideIn 0.5s ease forwards;
+  animation: slideIn 0.5s ease forwards alternate;
   opacity: 0;
   z-index: 1000;
 }
 @keyframes slideIn{
   from{
-    opacity: 0.5;
-    transform: translateX(300px);
+    opacity: 0.3;
+    transform: translateY(200px);
   }
   to{
     opacity: 1;
-    transform: translateX(0);
+    transform: translateY(0);
   }
+}
+.wrapfade{
+  transition:all 0.5s linear;
+  animation: slideOut 0.5s ease forwards alternate;
+}
+@keyframes slideOut{
+from{
+  transform: translateY(0);
+opacity: 0.8;
+ }
+to{
+  top: 100%;
+  opacity: 0;
+  display: none;
+}
 }
 .wrapUp .fa{
 margin:20px auto;
@@ -189,6 +213,74 @@ color: #fff;
   color: #eab058;
 }
 /*------------*/
+/*==loader===*/
+.loader{
+  position: fixed;
+  width: 100%;
+  left: 0;
+  top: 0;
+  height: 100%;
+  background: #302b26;
+  z-index: 1200;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fafafa;
+  animation: fadeout 0.5s ease forwards alternate;
+  animation-delay: 2s;
+  transition:animation 0.5s ease;
+}
+.loader span{
+height: 40px;
+width: 5px;
+background: #eab058;
+margin: 0 5px;
+border-radius: 10px;
+transition: animation 0.5s linear;
+animation: loader 0.5s linear infinite alternate;
+animation-delay: 0.3s;
+opacity: 0;
+}
+@keyframes loader{
+  0%{
+    opacity: 0.5;
+  }
+30%{
+opacity: 0.8;
+transform: scale(0.5);
+  }60%{
+opacity: 0.9;
+transform: scale(0.8);
+  }100%{
+    opacity: 1;
+    transform: scale(1.5);
+    height: initial;
+  }
+}
+.loader span:nth-child(2){
+  animation-delay: 0.5s;
+  height: 45px;
+}
+.loader span:nth-child(3){
+  height: 47px;
+  animation-delay: 0.7s;
+}
+.loader span:nth-child(4){
+  height: 50px;
+  animation-delay: 1s;
+}
+@keyframes fadeout{
+  0%{
+    opacity: 1;
+
+  }50%{
+    opacity: 0.5;
+  }
+  100%{
+    opacity: 0;
+    visibility: hidden;
+  }
+}
 /*-----discount-tag---*/
 .discount{
   position: absolute;
@@ -377,10 +469,6 @@ font-size: 22px;
   font-weight: 500;
 }
 /*---------facility-Style-------*/
-#facility-header-section{
-  background-image: url("https://images.unsplash.com/photo-1564078516393-cf04bd966897?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60");
-
-}
 #facility-page .th-col{
   margin: 30px auto;
 }
